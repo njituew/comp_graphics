@@ -20,7 +20,7 @@ def smooth_trajectory(trajectory):
         smoothed_trajectory[:, i] = moving_average(trajectory[:, i], SMOOTHING_RADIUS)
     return smoothed_trajectory
 
-def stabilize_video(input_video_path, output_video_path):
+def stabilize_video(input_video_path, output_video_path):   # стабилизация видео
     cap = cv2.VideoCapture(input_video_path)
     _, prev_frame = cap.read()
     prev_gray = cv2.cvtColor(prev_frame, cv2.COLOR_BGR2GRAY)
